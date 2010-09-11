@@ -12,6 +12,12 @@
 
 	<name>TLD Generator Tool for Tapestry Components and Eclipse IDE</name>
 
+	<scm>
+		<connection>scm:git:git@gitproxy:exanpe/tapestry-tldgen.git</connection>
+		<developerConnection>scm:git:git@gitproxy:exanpe/tapestry-tldgen.git</developerConnection>
+		<url>git@gitproxy:exanpe/tapestry-tldgen.git</url>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
