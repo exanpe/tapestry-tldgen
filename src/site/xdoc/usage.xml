@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+  <properties>
+    <title>Usage - Tapestry Tldgen</title>
+    <author email="exanpe@gmail.com">Exanpe</author>
+  </properties>
+
+  <body>
+
+    <section name="Usage">
+
+      <p>
+        Setting up tapestry-tldgen requires 2 minutes :<br/>
+      </p>
+      <ul>
+        <li>Open the pom.xml in your library project </li>
+        <li>Paste the following configuration is your plugins descriptor :
+        
+            <source>
+    <![CDATA[ 
+    <plugin>
+        <groupId>fr.exanpe</groupId>
+        <artifactId>tapestry-tldgen</artifactId>
+        <version>${set the version here}</version>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>tld-generate</goal>
+                </goals>
+                <phase>process-classes</phase>
+                <configuration>
+                    <uri>${set your tld uri here}</uri>
+                    <namespace>${set your tld defaut namespace here}</namespace>
+                    <rootPackage>${set your root package here}</rootPackage>
+                    <encoding>${set your source file encoding here}</encoding>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+    ]]>
+            </source>
+        </li>
+        <li>
+            Run a build and get your tld from target/ folder
+        </li>
+        
+      </ul>
+             
+    </section>
+    
+    <section name="Configuration">
+    
+        <table>
+            <tr>
+                <td><b>Configuration key</b></td>
+                <td><b>required</b></td>
+                <td><b>Description</b></td>
+            </tr>
+            <tr>
+                <td>uri</td>
+                <td><b>true</b></td>
+                <td>The uri of your taglib </td>
+            </tr>
+            <tr>
+                <td>rootPackage</td>
+                <td><b>true</b></td>
+                <td>The root package to scan the components. Do not append "components" in the end, root only is required. </td>
+            </tr>
+            <tr>
+                <td>namespace</td>
+                <td>false</td>
+                <td> The namespace of the taglib. Default is "t" . </td>
+            </tr>
+            <tr>
+                <td>encoding</td>
+                <td>false</td>
+                <td>The source file encoding. Default is your plateform encoding </td>
+            </tr>
+            <tr>
+                <td>outputFile</td>
+                <td>false</td>
+                <td>The tld file location. Default is ${project.build.directory}/${project.build.finalName}.tld </td>
+            </tr>
+        </table>
+    
+    </section>
+
+  </body>
+  
+</document>

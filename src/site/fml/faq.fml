@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs title="Frequently Asked Questions">
+  <part id="General">
+    <faq id="compilation-eclipse">
+      <question>The compilation doesn't work on Eclipse. Why ?</question>
+      <answer>
+        <p>
+          It seems the m2eclipse extension for Eclipse doesn't take into account the plexus components.xml descriptor file.
+          This is the reason why the project doesn't run on Eclipse auto build, but does on command line.
+          We are trying to find a way to get through...
+        </p>
+      </answer>
+    </faq>
+  </part>
+</faqs>
