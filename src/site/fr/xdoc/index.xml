@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+  <properties>
+    <title>Presentation - Tapestry Tldgen</title>
+    <author email="exanpe@gmail.com">Exanpe</author>
+  </properties>
+
+  <body>
+
+    <section name="Presentation">
+
+      <p>
+            Tapestry-Tldgen est un plugin Maven developpé et maintenu par l'équipe Exanpe.<br/>
+            Le but du plugin est de générer une tld décrivant une librairie de composants Tapestry 5.<br/>
+            Cette tld, une fois importée dans votre IDE préféré, aide significativement les développeuts et accélère nettement la production de pages tml.<br/>
+        <br/><br/>
+            Le plugin s'appuie à la fois sur la Javadoc and l'annotation @Parameter pour effectuer la génération.<br/>
+            Consultez la page <a href="usage.html">Utilisation</a> pour apprendre à générer votre tld en à peine 2 minutes !
+      </p>
+    </section>
+
+  </body>
+
+</document>

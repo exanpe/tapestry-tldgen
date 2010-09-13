@@ -4,17 +4,17 @@
   xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
 
   <properties>
-    <title>Download - Tapestry Tldgen</title>
+    <title>Téléchargement - Tapestry Tldgen</title>
     <author email="exanpe@gmail.com">Exanpe</author>
   </properties>
 
   <body>
 
-    <section name="Download">
+    <section name="Téléchargement">
 
       <p>
-             The plugin doesn't require any download. Just add it to your pom and the magic occur :)<br/>
- 			 Have a look to the <a href="usage.html">Usage</a> page
+            Le plugin ne se télécharge pas à proporement parler. Ajoutez simplement la dépendance à votre pom et la magie opère :)<br/>
+ 			Consultez la page <a href="usage.html">Utilisation</a>
       </p>
     </section>
 

@@ -17,6 +17,7 @@
             The purpose of this plugin is to generate a tld describing a Tapestry 5 components library.<br/>
             This tld, once imported in your favorite IDE, will greatly help developers to code their tml pages and increase their productivity significantly.<br/>
         <br/><br/>
+            The plugin uses both Javadoc and @Parameter annotation to perform the generation.<br/>
             Please have a look to the <a href="usage.html">Usage</a> page to learn in 2 minutes how to setup and generate your tld !
       </p>
     </section>

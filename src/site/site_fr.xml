@@ -8,28 +8,27 @@
   <bannerRight>
     <src>http://maven.apache.org/images/maven-small.gif</src>
   </bannerRight>
-  <publishDate position="right" format="MM-dd-yyyy"/>
+  <publishDate position="right" format="dd/MM/yyyy"/>
   <version position="navigation-bottom"/>
   <body>
     <links>
-      <item name="French" href="fr/index.html"/>
+      <item name="English" href="../index.html"/>
     </links>
-
     <menu name="Tapestry 5 tldgen">
       <item name="Presentation" href="index.html"/>
-      <item name="Usage" href="usage.html"/>
-      <item name="Download" href="download.html"/>
+      <item name="Utilisation" href="usage.html"/>
+      <item name="Téléchargement" href="download.html"/>
       <item name="Release Notes" href="release-notes.html" />
       <item name="Road Map" href="roadmap.html" />
       <item name="FAQ" href="faq.html" />
-      <item name="About us" href="about.html" />
+      <item name="A propos d'Exanpe" href="about.html" />
     </menu>
-    
-    <menu name="Our links">
+
+    <menu name="Liens">
       <item name="Tapestry 5" href="http://tapestry.apache.org/tapestry5/"/>
       <item name="Maven 2" href="http://maven.apache.org/"/>
-      <item name="Exanpe GitHub" href="http://www.github.com/exanpe/tapestry-tldgen"/>
-      <item name="Exanpe Blog" href="http://exanpe.blogspot.com/" />
+      <item name="GitHub Exanpe" href="http://www.github.com/exanpe/tapestry-tldgen"/>
+      <item name="Blog Exanpe" href="http://exanpe.blogspot.com/" />
     </menu>
 
     <menu ref="reports"/>

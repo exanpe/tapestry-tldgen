@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+  <properties>
+    <title>A propos d'Exanpe - Tapestry Tldgen</title>
+    <author email="exanpe@gmail.com">Exanpe</author>
+  </properties>
+
+  <body>
+
+    <section name="A propos d'Exanpe">
+
+      <p>
+            Exanpe est une équipe francaise (et un peu espagnole) de développement curieuse de découvrir de nouveaux frameworks Java EE.<br/>
+            Nous essayons d'aider la communauté, d'accélérer et de faciliter les développements sur notre temps libre
+  
+        <br/><br/>
+            Merci de nous remonter les erreurs éventuelles que vous décéleriez, on aime apprendre aussi ;).
+      </p>
+    </section>
+
+  </body>
+
+</document>

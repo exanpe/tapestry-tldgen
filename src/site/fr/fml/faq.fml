@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs title="Frequently Asked Questions">
+  <part id="General">
+    <faq id="compilation-eclipse">
+      <question>La compilation ne fonctionne pas sur Eclipse</question>
+      <answer>
+        <p>
+          L'extension m2eclipse ne semble pas prendre en compte le descripteur de plugin Plexus présent dans le jar du plugin.
+          Ceci occasionne une erreur de compilation lors du build automatique d'Eclipse, mais tout fonctionne parfaitement en ligne de commande.
+          Nous vous conseillons de désactiver le plugin afin de travailler avec Eclipse...
+          Nous travaillons dessus...
+        </p>
+      </answer>
+    </faq>
+  </part>
+</faqs>
