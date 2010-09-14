@@ -15,7 +15,7 @@ This requires only 2 minutes.
       <plugin>
         <groupId>fr.exanpe</groupId>
         <artifactId>tapestry-tldgen</artifactId>
-        <version>${set the version here}</version>
+        <version>1.0.0</version>
         <executions>
             <execution>
                 <goals>
