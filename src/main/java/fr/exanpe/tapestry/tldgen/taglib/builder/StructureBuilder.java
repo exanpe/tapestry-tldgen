@@ -106,9 +106,6 @@ public class StructureBuilder
                     throw new MojoExecutionException("Class loader internal error for class :" + s, e);
                 }
 
-                if(!c.getPackage().getName().endsWith("components"))
-                    continue;
-
                 if (!c.isAnnotation() && !c.isAnonymousClass() && !c.isEnum() && !c.isInterface() && !c.isLocalClass() && !c.isMemberClass()
                         && !c.isSynthetic() && !Modifier.isAbstract(c.getModifiers()))
                 {
