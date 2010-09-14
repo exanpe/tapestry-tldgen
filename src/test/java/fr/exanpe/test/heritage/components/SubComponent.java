@@ -18,6 +18,8 @@ package fr.exanpe.test.heritage.components;
 
 import org.apache.tapestry5.annotations.Parameter;
 
+import fr.exanpe.test.heritage.base.Component;
+
 public abstract class SubComponent extends Component
 {
     @Parameter

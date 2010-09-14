@@ -36,7 +36,7 @@ public class SingleTypeFieldAnnotationScannerTest extends TestCase
     public void testOk() throws MalformedURLException
     {
         Reflections reflection = new Reflections(new ConfigurationBuilder().filterInputsBy(
-                new FilterBuilder.Include(FilterBuilder.prefix(SubSubComponent.class.getPackage().getName()))).setUrls(new URL[]
+                new FilterBuilder.Include(FilterBuilder.prefix("fr.exanpe.test.heritage"))).setUrls(new URL[]
         { new File("target/test-classes/").toURI().toURL() }).setScanners(new SingleTypeFieldAnnotationScanner(SubSubComponent.class)));
 
         Collection<String> fieldsAsString = reflection.getStore().get(SingleTypeFieldAnnotationScanner.class).values();
@@ -47,7 +47,7 @@ public class SingleTypeFieldAnnotationScannerTest extends TestCase
     public void testOk2() throws MalformedURLException
     {
         Reflections reflection = new Reflections(new ConfigurationBuilder().filterInputsBy(
-                new FilterBuilder.Include(FilterBuilder.prefix(Other.class.getPackage().getName()))).setUrls(new URL[]
+                new FilterBuilder.Include(FilterBuilder.prefix("fr.exanpe.test.heritage"))).setUrls(new URL[]
         { new File("target/test-classes/").toURI().toURL() }).setScanners(new SingleTypeFieldAnnotationScanner(Other.class)));
         Collection<String> fieldsAsString = reflection.getStore().get(SingleTypeFieldAnnotationScanner.class).values();
 

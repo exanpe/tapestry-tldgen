@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-package fr.exanpe.test.heritage.components;
+package fr.exanpe.test.heritage.base;
 
 import org.apache.tapestry5.annotations.Parameter;
 

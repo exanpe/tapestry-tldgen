@@ -35,7 +35,7 @@ public class StructureBuilderTest extends TestCase
         StructureBuilder builder = new StructureBuilder(new SystemStreamLog());
 
         Taglib t = builder.build("fr.exanpe.test.heritage", new String[]
-        { "components" }, new URL[]
+        { "base", "components" }, new URL[]
         { new File("target/test-classes/").toURI().toURL() });
 
         assertNotNull(t);

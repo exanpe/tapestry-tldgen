@@ -74,10 +74,9 @@ public class StructureBuilder
 
         log.debug("Creating taglib object model...");
 
-        for (final String tapestryPkgName : supportedPackages)
-        {
 
-            String pkgname = rootPackage + "." + tapestryPkgName;
+        for(String subPackage : supportedPackages){
+            String pkgname = rootPackage +"."+ subPackage;
 
             log.debug("Processing taglib for full package named : " + pkgname);
 
@@ -107,16 +106,20 @@ public class StructureBuilder
                     throw new MojoExecutionException("Class loader internal error for class :" + s, e);
                 }
 
+                if(!c.getPackage().getName().endsWith("components"))
+                    continue;
+
                 if (!c.isAnnotation() && !c.isAnonymousClass() && !c.isEnum() && !c.isInterface() && !c.isLocalClass() && !c.isMemberClass()
                         && !c.isSynthetic() && !Modifier.isAbstract(c.getModifiers()))
                 {
                     log.debug("Processing Tag : " + c.getName());
 
-                    Tag tag = buildTagFromClass(c);
+                    Tag tag = buildTagFromClass(rootPackage, c);
                     taglib.getTags().add(tag);
                 }
             }
         }
+
 
         log.debug("Taglib object model completed");
         return taglib;
@@ -125,12 +128,13 @@ public class StructureBuilder
     /**
      * Return the field annotated with @Parameter for a class
      * 
+     * @param rootPackage The rootPackage to look for class and eventually parent abstract class
      * @param c the class
      * @return a list of {@link Field}
      */
-    private List<Field> getFieldAnnotatedWithParameter(Class<?> c)
+    private List<Field> getFieldAnnotatedWithParameter(String rootPackage, Class<?> c)
     {
-        Reflections reflection = new Reflections(c.getPackage().getName(), new SingleTypeFieldAnnotationScanner(c).filterResultsBy(new FilterBuilder.Include(
+        Reflections reflection = new Reflections(rootPackage, new SingleTypeFieldAnnotationScanner(c).filterResultsBy(new FilterBuilder.Include(
                 Parameter.class.getCanonicalName())));
         Collection<String> fieldsAsString = reflection.getStore().get(SingleTypeFieldAnnotationScanner.class).values();
         List<Field> fields = new ArrayList<Field>();
@@ -144,16 +148,17 @@ public class StructureBuilder
     /**
      * Build the &lt;tag&gt; tag corresponding to a class
      * 
+     * @param rootPackage The rootPackage to look for class and eventually parent abstract class
      * @param c the class for the tag
      * @return the {@link Tag} build
      */
-    private Tag buildTagFromClass(Class<?> c)
+    private Tag buildTagFromClass(String rootPackage, Class<?> c)
     {
         Tag tag = new Tag();
         tag.setTagClass(c.getName());
         tag.setName(c.getSimpleName());
 
-        List<Field> fields = getFieldAnnotatedWithParameter(c);
+        List<Field> fields = getFieldAnnotatedWithParameter(rootPackage, c);
 
         for (Field f : fields)
         {
