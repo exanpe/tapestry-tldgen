@@ -75,7 +75,7 @@ This requires only 2 minutes.
             </tr>
 </table>
 
-5 . Eclipse :
+## Eclipse
 
         To benefit of the tld information in your tml coding, execute the instruction on the following page :
         http://wiki.apache.org/tapestry/Tapestry5JSPEditorEclipse
