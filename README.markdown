@@ -77,6 +77,6 @@ This requires only 2 minutes.
 
 5 . Eclipse :
 
-        To benefit of the tld information in your tml coding, execute the instruction on the following page :<br/>
-        <a href="http://wiki.apache.org/tapestry/Tapestry5JSPEditorEclipse">Tapestry 5 and JSP Editor for Eclipse</a>
+        To benefit of the tld information in your tml coding, execute the instruction on the following page :
+        http://wiki.apache.org/tapestry/Tapestry5JSPEditorEclipse
    
