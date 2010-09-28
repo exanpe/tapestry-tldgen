@@ -16,6 +16,8 @@
 
 package fr.exanpe.tapestry.tldgen.utils;
 
+import org.apache.commons.lang.StringUtils;
+
 import fr.exanpe.tapestry.tldgen.javadoc.mapping.ComponentBean;
 import fr.exanpe.tapestry.tldgen.javadoc.mapping.ComponentsInfoBean;
 import fr.exanpe.tapestry.tldgen.javadoc.mapping.ParameterBean;
@@ -64,7 +66,10 @@ public class JavadocBeanMerger
                         description = getParentAttributeDescription(comp, a, infos);
                     }
                     
-                    a.setDescription(description+"\n"+a.getParameterDescription());
+                    if(StringUtils.isEmpty(description))
+                        description = TapestryTldGenConstants.NO_DESCRIPTION;
+                    
+                    a.setDescription(description+TapestryTldGenConstants.DEFAULT_TLD_SEPARATOR+a.getParameterDescription());
                 }
             }
         }

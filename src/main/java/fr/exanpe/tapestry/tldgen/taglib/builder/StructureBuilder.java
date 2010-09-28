@@ -189,9 +189,9 @@ public class StructureBuilder
     
     private String buildParameterDescription(Parameter p){
         StringBuilder builder = new StringBuilder();
-            
+        
         builder.append(TapestryTldGenConstants.ALLOW_NULL_TXT).append(p.allowNull()).append("\n");
-        builder.append(TapestryTldGenConstants.DEFAULT_PREFIX_TXT).append(p.defaultPrefix()).append("\n");
+        builder.append(TapestryTldGenConstants.DEFAULT_TLD_SEPARATOR).append(TapestryTldGenConstants.DEFAULT_PREFIX_TXT).append(p.defaultPrefix()).append("\n");
         
         return builder.toString();
     }

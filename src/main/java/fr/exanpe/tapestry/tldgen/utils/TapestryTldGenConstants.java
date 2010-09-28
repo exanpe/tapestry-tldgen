@@ -65,12 +65,22 @@ public class TapestryTldGenConstants
     { "base", "components" };
     
     /**
-     * Allow null String in generation
+     * Allow null String in description
      */
     public static final String ALLOW_NULL_TXT = "Allow null : ";
     
     /**
-     * Allow null String in generation
+     * Default prefix in description
      */
     public static final String DEFAULT_PREFIX_TXT = "Default prefix : ";
+    
+    /**
+     * Separator in tld for multiple information in a single tag
+     */
+    public static final String DEFAULT_TLD_SEPARATOR = " - ";
+    
+    /**
+     * Text displayed when no description has been found
+     */
+    public static final String NO_DESCRIPTION = "No description found";
 }
