@@ -178,7 +178,6 @@ public class StructureBuilder
         log.debug("Processing Attribute : " + field.getName());
 
         Attribute attribute = new Attribute();
-        attribute.setFieldName(field.getName());
         attribute.setName(StringUtils.isNotEmpty(field.getAnnotation(Parameter.class).name())?field.getAnnotation(Parameter.class).name():field.getName());
 
         attribute.setDeferredValue(field.getType().getName());

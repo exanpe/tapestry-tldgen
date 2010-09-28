@@ -106,7 +106,6 @@ public class TaglibWriterProcessorTest extends TestCase
         Attribute att = new Attribute();
         att.setDeferredValue("java.lang.String");
         att.setDescription("My Attribute");
-        att.setFieldName("fieldName");
         att.setName("attName");
         att.setRequired(true);
         att.setParameterDescription("parameter description");

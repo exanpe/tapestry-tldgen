@@ -84,7 +84,7 @@ public class StructureBuilderTest extends TestCase
         Iterator<Attribute> ite = subsubT.getAttributes().iterator();
         while(ite.hasNext()){
             Attribute a = ite.next();
-            found |= (a.getName().equals("subnewname") && a.getFieldName().equals("subsubParam"));
+            found |= (a.getName().equals("subnewname"));
         }
         
         assertTrue(found);

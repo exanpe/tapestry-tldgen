@@ -31,15 +31,7 @@ import fr.exanpe.tapestry.tldgen.ext.impl.DeferredValueConverter;
  */
 @XStreamAlias("attribute")
 public class Attribute
-{
-    /**
-     * Name of the field. Can be different of the name of the paramter.
-     * Used to bind with Javadoc information
-     * @see Parameter#name()
-     */
-    @XStreamOmitField
-    private String fieldName;
-    
+{    
     /**
      * Name of the parameter as defined by the user
      * @see Parameter#name()
@@ -78,16 +70,6 @@ public class Attribute
     public void setName(String name)
     {
         this.name = name;
-    }
-    
-    public String getFieldName()
-    {
-        return fieldName;
-    }
-
-    public void setFieldName(String fieldName)
-    {
-        this.fieldName = fieldName;
     }
 
     /**
