@@ -14,7 +14,7 @@
 	<scm>
 		<connection>scm:git:git@gitproxy:exanpe/tapestry-tldgen.git</connection>
 		<developerConnection>scm:git:git@gitproxy:exanpe/tapestry-tldgen.git</developerConnection>
-		<url>git@gitproxy:exanpe/tapestry-tldgen.git</url>
+		<url>http://github.com/exanpe/tapestry-tldgen</url>
 	</scm>
 
 	<dependencies>
