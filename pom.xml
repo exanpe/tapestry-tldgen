@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>exanpe-parent</artifactId>
@@ -7,7 +6,7 @@
 		<version>1.0</version>
 	</parent>
 	<artifactId>tapestry-tldgen</artifactId>
-	<version>0.9.1-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>TLD Generator Tool for Tapestry Components and Eclipse IDE</name>
@@ -140,13 +139,6 @@
 			<name>Reflections Maven2 Repository</name>
 			<url>http://reflections.googlecode.com/svn/repo</url>
 		</repository>
-		
-		<!-- TODO : remove after Central Sync activation -->
-		<repository>
-			<id>sonatype-nexus-public</id>
-			<name>Nexus Public Release Repository</name>
-			<url>http://oss.sonatype.org/content/groups/public</url>
-		</repository>		
 	</repositories>
 
 	<properties>

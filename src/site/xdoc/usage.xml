@@ -9,6 +9,14 @@
   </properties>
 
   <body>
+  
+     <section name="Requirements">
+        The plugin execution requires :
+        <ul>
+            <li>Java 1.5 (as Tapestry 5 do)</li>
+            <li>Maven 2+ (tested on 2.0.10 and 2.2.1)</li>
+        </ul> 
+     </section>
 
     <section name="Usage">
 
@@ -46,6 +54,9 @@
         </li>
         <li>
             Run a build and get your tld from target/ folder
+        </li>
+        <li>
+            Nevermind about the tldgen-components-info.xml file generated. We only generate it to provide Javadoc information back to the plugin. 
         </li>
         
       </ul>
@@ -86,6 +97,12 @@
                 <td>The tld file location. Default is ${project.build.directory}/${project.build.finalName}.tld </td>
             </tr>
         </table>
+    
+    </section>
+
+    <section name="Tld exploitation">
+        To benefit of the tld information in your tml coding, execute the instruction on the following page :<br/>
+        <a href="http://wiki.apache.org/tapestry/Tapestry5JSPEditorEclipse">Tapestry 5 and JSP Editor for Eclipse</a>
     
     </section>
 
