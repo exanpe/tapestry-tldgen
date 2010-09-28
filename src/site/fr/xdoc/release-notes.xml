@@ -15,6 +15,9 @@
       <p>
        13/09/2010 : 1.0.0 : Déploiement de la première version du plugin
      </p>
+     <p>
+        01/10/2010 : 1.1.0 : Bug corrigé sur la fusion des descriptions + ajout des informations allowNull et defaultPrefix dans la tld
+      </p>
      <hr/>
     </section>
 

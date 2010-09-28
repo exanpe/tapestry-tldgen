@@ -14,7 +14,10 @@
 
       <p>
         09-13-2010 : 1.0.0 : Deployment of the plugin first version
-     </p>
+      </p>
+      <p>
+        10-01-2010 : 1.1.0 : Bug fixed on description merging + adding allowNull and defaultPrefix information in tld
+      </p>
      <hr/>
     </section>
 
