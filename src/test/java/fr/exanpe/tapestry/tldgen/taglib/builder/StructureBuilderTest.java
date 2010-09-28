@@ -19,12 +19,15 @@ package fr.exanpe.tapestry.tldgen.taglib.builder;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Iterator;
 
 import junit.framework.TestCase;
 
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.logging.SystemStreamLog;
 
+import fr.exanpe.tapestry.tldgen.taglib.mapping.Attribute;
+import fr.exanpe.tapestry.tldgen.taglib.mapping.Tag;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Taglib;
 import fr.exanpe.test.heritage.components.SubSubComponent;
 
@@ -48,5 +51,41 @@ public class StructureBuilderTest extends TestCase
         else
             assertEquals(3, t.getTags().get(1).getAttributes().size());
 
+    }
+    
+    /**
+     * Issue 4 Junit
+     * @throws MalformedURLException
+     * @throws MojoExecutionException
+     */
+    public void testParameterName() throws MalformedURLException, MojoExecutionException
+    {
+        StructureBuilder builder = new StructureBuilder(new SystemStreamLog());
+
+        Taglib t = builder.build("fr.exanpe.test.heritage", new String[]
+        { "base", "components" }, new URL[]
+        { new File("target/test-classes/").toURI().toURL() });
+
+        assertNotNull(t);
+
+        assertEquals(2, t.getTags().size());
+
+        // on fait un test sur subsub
+        Tag subsubT = null;
+        if (t.getTags().get(0).getTagClass().equals(SubSubComponent.class.getName())){
+            subsubT = t.getTags().get(0);
+        }else{
+            subsubT = t.getTags().get(1);
+        }
+        
+        boolean found = false;
+        
+        Iterator<Attribute> ite = subsubT.getAttributes().iterator();
+        while(ite.hasNext()){
+            Attribute a = ite.next();
+            found |= (a.getName().equals("subnewname") && a.getFieldName().equals("subsubParam"));
+        }
+        
+        assertEquals(true, found);
     }
 }

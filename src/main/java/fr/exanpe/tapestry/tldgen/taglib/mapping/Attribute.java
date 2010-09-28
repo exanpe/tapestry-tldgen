@@ -16,8 +16,11 @@
 
 package fr.exanpe.tapestry.tldgen.taglib.mapping;
 
+import org.apache.tapestry5.annotations.Parameter;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import fr.exanpe.tapestry.tldgen.ext.impl.DeferredValueConverter;
 
@@ -29,6 +32,17 @@ import fr.exanpe.tapestry.tldgen.ext.impl.DeferredValueConverter;
 @XStreamAlias("attribute")
 public class Attribute
 {
+    /**
+     * Name of the field. Can be different of the name of the paramter.
+     * @see Parameter#name()
+     */
+    @XStreamOmitField
+    private String fieldName;
+    
+    /**
+     * Name of the parameter as defined by the user
+     * @see Parameter#name()
+     */
     private String name;
 
     private String description;
@@ -57,6 +71,16 @@ public class Attribute
     public void setName(String name)
     {
         this.name = name;
+    }
+    
+    public String getFieldName()
+    {
+        return fieldName;
+    }
+
+    public void setFieldName(String fieldName)
+    {
+        this.fieldName = fieldName;
     }
 
     /**
@@ -95,4 +119,5 @@ public class Attribute
         this.deferredValue = type;
     }
 
+    
 }

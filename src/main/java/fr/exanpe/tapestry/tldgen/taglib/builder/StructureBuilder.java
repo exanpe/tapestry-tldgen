@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.logging.Log;
 import org.apache.tapestry5.annotations.Parameter;
@@ -176,7 +177,8 @@ public class StructureBuilder
         log.debug("Processing Attribute : " + field.getName());
 
         Attribute attribute = new Attribute();
-        attribute.setName(field.getName());
+        attribute.setFieldName(field.getName());
+        attribute.setName(StringUtils.isNotEmpty(field.getAnnotation(Parameter.class).name())?field.getAnnotation(Parameter.class).name():field.getName());
 
         attribute.setDeferredValue(field.getType().getName());
         attribute.setRequired(field.getAnnotation(Parameter.class).required());

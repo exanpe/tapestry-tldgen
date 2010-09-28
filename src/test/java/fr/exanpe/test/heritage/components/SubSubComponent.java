@@ -20,6 +20,6 @@ import org.apache.tapestry5.annotations.Parameter;
 
 public class SubSubComponent extends SubComponent
 {
-    @Parameter
+    @Parameter(name="subnewname")
     private String subsubParam;
 }

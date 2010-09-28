@@ -51,7 +51,7 @@ public class JavadocBeanMerger
                 for (Attribute a : t.getAttributes())
                 {
 
-                    ParameterBean param = comp.getParameterByName(a.getName());
+                    ParameterBean param = comp.getParameterByName(a.getFieldName());
 
                     if (param != null)
                     {
@@ -88,7 +88,7 @@ public class JavadocBeanMerger
 
             if (comp != null)
             {
-                ParameterBean superParam = comp.getParameterByName(a.getName());
+                ParameterBean superParam = comp.getParameterByName(a.getFieldName());
 
                 if (superParam != null)
                 {
