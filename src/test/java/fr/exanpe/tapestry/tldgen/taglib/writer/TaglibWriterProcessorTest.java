@@ -21,6 +21,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 import junit.framework.TestCase;
+import fr.exanpe.tapestry.tldgen.taglib.mapping.Attribute;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Tag;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Taglib;
 
@@ -83,4 +84,47 @@ public class TaglibWriterProcessorTest extends TestCase
         assertTrue(xmlRes.contains("</tag>"));
     }
 
+    public void testWriteAttribute() throws IOException
+    {
+        Writer writer = new StringWriter();
+        TaglibWriterProcessor processor = new TaglibWriterProcessor(writer);
+        
+        Taglib taglib = new Taglib();
+        taglib.setShortName("ShortName");
+        taglib.setTaglibVersion("2.12");
+        taglib.setUri("test.com");
+        
+        
+        Tag tag = new Tag();
+        tag.setName("monTagName");
+        tag.setTagClass("fr.MaClasse");
+        tag.setDescription("Ma description");
+        
+       
+        
+        
+        Attribute att = new Attribute();
+        att.setDeferredValue("java.lang.String");
+        att.setDescription("My Attribute");
+        att.setFieldName("fieldName");
+        att.setName("attName");
+        att.setRequired(true);
+        att.setParameterDescription("parameter description");
+        
+        tag.getAttributes().add(att);
+        taglib.getTags().add(tag);
+        
+        processor.write(taglib);
+        
+        String xmlRes = writer.toString();
+        
+        assertNotNull(xmlRes);
+        assertNotSame("", xmlRes);
+        
+        assertTrue(xmlRes.contains("<attribute>"));
+        assertTrue(xmlRes.contains("<name>attName</name>"));
+        assertTrue(xmlRes.contains("<description>My Attribute</description>"));
+        assertTrue(xmlRes.contains("<required>true</required>"));
+        assertTrue(xmlRes.contains("</attribute>"));
+    }
 }

@@ -29,6 +29,7 @@ import org.apache.maven.plugin.logging.SystemStreamLog;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Attribute;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Tag;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Taglib;
+import fr.exanpe.tapestry.tldgen.utils.TapestryTldGenConstants;
 import fr.exanpe.test.heritage.components.SubSubComponent;
 
 public class StructureBuilderTest extends TestCase
@@ -86,6 +87,26 @@ public class StructureBuilderTest extends TestCase
             found |= (a.getName().equals("subnewname") && a.getFieldName().equals("subsubParam"));
         }
         
-        assertEquals(true, found);
+        assertTrue(found);
+    }
+    
+    /**
+     * Issue 1 Junit
+     * @throws MalformedURLException
+     * @throws MojoExecutionException
+     */
+    public void testParameterInfos() throws MalformedURLException, MojoExecutionException
+    {
+        StructureBuilder builder = new StructureBuilder(new SystemStreamLog());
+
+        Taglib t = builder.build("fr.exanpe.test.heritage", new String[]
+        { "base", "components" }, new URL[]
+        { new File("target/test-classes/").toURI().toURL() });
+
+        Attribute a = t.getTags().get(0).getAttributes().get(0);
+        
+        //just all to default
+        assertTrue(a.getParameterDescription().contains(TapestryTldGenConstants.ALLOW_NULL_TXT+"true"));
+        assertTrue(a.getParameterDescription().contains(TapestryTldGenConstants.DEFAULT_PREFIX_TXT+"prop"));
     }
 }

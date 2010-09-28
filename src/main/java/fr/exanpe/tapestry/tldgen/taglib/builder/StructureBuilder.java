@@ -40,6 +40,7 @@ import fr.exanpe.tapestry.tldgen.ext.impl.SingleTypeFieldAnnotationScanner;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Attribute;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Tag;
 import fr.exanpe.tapestry.tldgen.taglib.mapping.Taglib;
+import fr.exanpe.tapestry.tldgen.utils.TapestryTldGenConstants;
 
 /**
  * This class builds the final structure of the taglib to generate
@@ -182,7 +183,17 @@ public class StructureBuilder
 
         attribute.setDeferredValue(field.getType().getName());
         attribute.setRequired(field.getAnnotation(Parameter.class).required());
-
+        attribute.setParameterDescription(buildParameterDescription(field.getAnnotation(Parameter.class)));
+        
         return attribute;
+    }
+    
+    private String buildParameterDescription(Parameter p){
+        StringBuilder builder = new StringBuilder();
+            
+        builder.append(TapestryTldGenConstants.ALLOW_NULL_TXT).append(p.allowNull()).append("\n");
+        builder.append(TapestryTldGenConstants.DEFAULT_PREFIX_TXT).append(p.defaultPrefix()).append("\n");
+        
+        return builder.toString();
     }
 }

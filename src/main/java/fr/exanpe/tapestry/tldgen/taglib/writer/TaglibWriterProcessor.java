@@ -68,7 +68,7 @@ public class TaglibWriterProcessor
         { "description", "name", "tagClass", "bodyContent", "attributes" });
 
         sorter.registerFieldOrder(Attribute.class, new String[]
-        { "description", "name", "required", "deferredValue" });
+        { "description", "name", "required", "deferredValue", "parameterDescription", "fieldName"});
 
         return sorter;
     }

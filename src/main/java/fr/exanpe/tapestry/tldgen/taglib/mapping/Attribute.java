@@ -34,6 +34,7 @@ public class Attribute
 {
     /**
      * Name of the field. Can be different of the name of the paramter.
+     * Used to bind with Javadoc information
      * @see Parameter#name()
      */
     @XStreamOmitField
@@ -46,6 +47,12 @@ public class Attribute
     private String name;
 
     private String description;
+    
+    /**
+     * A annotation specific description used to gather information from @Parameter annotation.
+     */
+    @XStreamOmitField
+    private String parameterDescription;
 
     private boolean required;
 
@@ -97,6 +104,16 @@ public class Attribute
     public void setDescription(String description)
     {
         this.description = description;
+    }
+    
+    public String getParameterDescription()
+    {
+        return parameterDescription;
+    }
+
+    public void setParameterDescription(String parameterDescription)
+    {
+        this.parameterDescription = parameterDescription;
     }
 
     public boolean isRequired()

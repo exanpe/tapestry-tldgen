@@ -53,14 +53,18 @@ public class JavadocBeanMerger
 
                     ParameterBean param = comp.getParameterByName(a.getFieldName());
 
+                    String description = null;
+                    
                     if (param != null)
                     {
-                        a.setDescription(param.getDescription());
+                        description = param.getDescription();
                     }
                     else
                     {
-                        a.setDescription(getParentAttributeDescription(comp, a, infos));
+                        description = getParentAttributeDescription(comp, a, infos);
                     }
+                    
+                    a.setDescription(description+"\n"+a.getParameterDescription());
                 }
             }
         }
@@ -80,7 +84,7 @@ public class JavadocBeanMerger
     {
         try
         {
-            Class c = Class.forName(comp.getClassName());
+            Class<?> c = Class.forName(comp.getClassName());
 
             if (c.getSuperclass() == null) { return null; }
 

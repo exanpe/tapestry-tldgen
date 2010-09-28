@@ -63,4 +63,14 @@ public class TapestryTldGenConstants
      */
     public final static String[] TAPESTRY_SUPPORTED_SUBPACKAGES = new String[]
     { "base", "components" };
+    
+    /**
+     * Allow null String in generation
+     */
+    public static final String ALLOW_NULL_TXT = "Allow null : ";
+    
+    /**
+     * Allow null String in generation
+     */
+    public static final String DEFAULT_PREFIX_TXT = "Default prefix : ";
 }
