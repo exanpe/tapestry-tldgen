@@ -122,7 +122,13 @@ public class JavadocProcessor
         }
 
         // XML Output file for collect conponents information
-        String parametersPath = project.getBuild().getDirectory() + File.separator + "tldgen-components-info.xml";
+        String tempDir = System.getProperty("java.io.tmpdir");
+        // Security check if there is a trailing slash or not
+        if (!(tempDir.endsWith("/") || tempDir.endsWith("\\")))
+        {
+            tempDir = tempDir + File.separator;
+        }
+        String parametersPath = tempDir + "tldgen-components-info.xml";
 
         // Args used by Javadoc tool
         String[] arguments =
