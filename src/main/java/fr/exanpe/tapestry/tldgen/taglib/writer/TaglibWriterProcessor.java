@@ -90,7 +90,10 @@ public class TaglibWriterProcessor
             xstream.autodetectAnnotations(true);
 
             writer.write(TapestryTldGenConstants.XML_HEADER_ENCODING);
-
+            writer.write("\n");
+            writer.write(TapestryTldGenConstants.GENERATED_BY);
+            writer.write("\n");
+            
             ppwriter = new PrettyPrintWriter(writer, PrettyPrintWriter.XML_1_1, new char[]
             { ' ', ' ' });
 
