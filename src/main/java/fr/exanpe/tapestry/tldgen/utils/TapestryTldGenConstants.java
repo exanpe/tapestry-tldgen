@@ -77,7 +77,7 @@ public class TapestryTldGenConstants
     /**
      * Separator in tld for multiple information in a single tag
      */
-    public static final String DEFAULT_TLD_SEPARATOR = " - ";
+    public static final String DEFAULT_TLD_SEPARATOR = " <br/> ";
     
     /**
      * Text displayed when no description has been found
