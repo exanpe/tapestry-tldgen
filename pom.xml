@@ -6,7 +6,7 @@
 		<version>1.1</version>
 	</parent>
 	<artifactId>tapestry-tldgen</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>TLD Generator Tool for Tapestry Components and Eclipse IDE</name>
