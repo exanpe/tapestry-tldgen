@@ -55,10 +55,6 @@
         <li>
             Run a build and get your tld from target/ folder
         </li>
-        <li>
-            Nevermind about the tldgen-components-info.xml file generated. We only generate it to provide Javadoc information back to the plugin. 
-        </li>
-        
       </ul>
              
     </section>

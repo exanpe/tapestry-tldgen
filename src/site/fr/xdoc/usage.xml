@@ -55,10 +55,6 @@
         <li>
             Lancez un build and récupérez votre tld dans le répertoire target/
         </li>
-        <li>
-            Le fichier tldgen-components-info.xml n'est pas à prendre en compte. Le plugin le génère simplement pour rendre disponible au plugin les informations issues de la Javadoc. 
-        </li>
-                
       </ul>
              
     </section>

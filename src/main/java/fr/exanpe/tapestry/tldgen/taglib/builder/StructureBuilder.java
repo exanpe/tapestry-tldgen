@@ -76,9 +76,9 @@ public class StructureBuilder
 
         log.debug("Creating taglib object model...");
 
-
-        for(String subPackage : supportedPackages){
-            String pkgname = rootPackage +"."+ subPackage;
+        for (String subPackage : supportedPackages)
+        {
+            String pkgname = rootPackage + "." + subPackage;
 
             log.debug("Processing taglib for full package named : " + pkgname);
 
@@ -119,7 +119,6 @@ public class StructureBuilder
             }
         }
 
-
         log.debug("Taglib object model completed");
         return taglib;
     }
@@ -133,8 +132,8 @@ public class StructureBuilder
      */
     private List<Field> getFieldAnnotatedWithParameter(String rootPackage, Class<?> c)
     {
-        Reflections reflection = new Reflections(rootPackage, new SingleTypeFieldAnnotationScanner(c).filterResultsBy(new FilterBuilder.Include(
-                Parameter.class.getCanonicalName())));
+        Reflections reflection = new Reflections(rootPackage, new SingleTypeFieldAnnotationScanner(c).filterResultsBy(new FilterBuilder.Include(Parameter.class
+                .getCanonicalName())));
         Collection<String> fieldsAsString = reflection.getStore().get(SingleTypeFieldAnnotationScanner.class).values();
         List<Field> fields = new ArrayList<Field>();
         for (String fAsString : fieldsAsString)
@@ -155,7 +154,7 @@ public class StructureBuilder
     {
         Tag tag = new Tag();
         tag.setTagClass(c.getName());
-        tag.setName(c.getSimpleName());
+        tag.setName(c.getSimpleName().toLowerCase());
 
         List<Field> fields = getFieldAnnotatedWithParameter(rootPackage, c);
 
@@ -178,21 +177,22 @@ public class StructureBuilder
         log.debug("Processing Attribute : " + field.getName());
 
         Attribute attribute = new Attribute();
-        attribute.setName(StringUtils.isNotEmpty(field.getAnnotation(Parameter.class).name())?field.getAnnotation(Parameter.class).name():field.getName());
+        attribute.setName(StringUtils.isNotEmpty(field.getAnnotation(Parameter.class).name()) ? field.getAnnotation(Parameter.class).name() : field.getName());
 
         attribute.setDeferredValue(field.getType().getName());
         attribute.setRequired(field.getAnnotation(Parameter.class).required());
         attribute.setParameterDescription(buildParameterDescription(field.getAnnotation(Parameter.class)));
-        
+
         return attribute;
     }
-    
-    private String buildParameterDescription(Parameter p){
+
+    private String buildParameterDescription(Parameter p)
+    {
         StringBuilder builder = new StringBuilder();
-        
+
         builder.append(TapestryTldGenConstants.ALLOW_NULL_TXT).append(p.allowNull()).append("\n");
         builder.append(TapestryTldGenConstants.DEFAULT_TLD_SEPARATOR).append(TapestryTldGenConstants.DEFAULT_PREFIX_TXT).append(p.defaultPrefix()).append("\n");
-        
+
         return builder.toString();
     }
 }
