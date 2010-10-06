@@ -101,9 +101,14 @@
     </section>
     
     <section name="Exploitation de la tld">
-        Pour exploiter la tld générée, suivre la documentation disponible à l'adresse suivante :<br/>
+        Pour exploiter la tld générée, suivre la documentation disponible à l'adresse suivante, à laquelle effectuer quelques modifications :<br/>
         <a href="http://wiki.apache.org/tapestry/Tapestry5JSPEditorEclipse">Tapestry 5 et l'editeur JSP pour Eclipse</a>
-    
+    	<ul>
+    		<li>Définir le "key field" en tant que "tapestry-library:${libkey}", ${libkey} la clé définie dans la classe Module de la library (<a href="http://tapestry.apache.org/tapestry5/cookbook/lib.html">Documentation Tapestry 5 sur les library</a>).</li>
+    		<li>Dans le tml, définir la tld dans le tag racine (xmlns:${namespace}="tapestry-library:${libkey}").<br/>
+    		C'est ici la configuration standard de Tapestry, rien n'a besoin d'être modifié pour tirer partie de la tld . Un simple binding est effectué dans le XML Catalog.</li>
+    		<li>Ajouter autant de déclaration que nécessaire dans le tml. Le lien avec la documentation est effectué pour chaque tld fournie.</li>
+    	</ul>
     </section>
 
   </body>

@@ -101,9 +101,14 @@
     </section>
 
     <section name="Tld exploitation">
-        To benefit of the tld information in your tml coding, execute the instruction on the following page :<br/>
-        <a href="http://wiki.apache.org/tapestry/Tapestry5JSPEditorEclipse">Tapestry 5 and JSP Editor for Eclipse</a>
-    
+        To get advantage of the tld information in your tml coding, execute the instructions on the following page with some modificaitons :<br/>
+        <a href="http://wiki.apache.org/tapestry/Tapestry5JSPEditorEclipse">Tapestry 5 and JSP Editor for Eclipse</a><br/>
+    	<ul>
+    		<li>Set your key field as "tapestry-library:${libkey}", ${libkey} the key defined in the library Module class (<a href="http://tapestry.apache.org/tapestry5/cookbook/lib.html">Tapestry 5 doc on library</a>). </li>
+    		<li>In your tml, just define your tld in your root tag. (xmlns:${namespace}="tapestry-library:${libkey}")<br/>
+    			This is the standard Tapestry configuration, nothing has to be changed here to use the tld . A simple binding is performed in the XML Catalog.</li>
+    		<li>Add as many declaration as you want in your tml. The link is performed with each tld declared.</li>
+    	</ul>
     </section>
 
   </body>
